@@ -11,7 +11,8 @@
   - You CANNOT remove template tags (variables between {}). The test may change the content of these.
 -->
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnet Frontend Test</title>
@@ -19,17 +20,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <script src="site.js"></script>
-  </head>
-  <body>
-    <img src="img/logo.png">
-    Dogos
-    {navlinks}
-    <h1>{title}</h1>
-    {content1}
-    <a href="#"><img src="img/paw.png">Learn more</a>
-    {content2}
-    <a href="#"><img src="img/paw.png">Learn more</a>
-    {content3}
-    <a href="#"><img src="img/paw.png">Learn more</a>
-  </body>
+</head>
+
+<body>
+    <nav>
+        <div class="content">
+            <div class="brand">
+                <img src="img/logo.png"> Dogos
+            </div>
+            {navlinks}
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>{title}</h1>
+        <div class="deck">
+            <div class="card">
+                {content1}
+
+                <a href="#"><img src="img/paw.png">Learn more</a>
+
+            </div>
+            <div class="card">
+                {content2}
+                <a href="#"><img src="img/paw.png">Learn more</a>
+            </div>
+            <div class="card">
+                {content3}
+                <a href="#"><img src="img/paw.png">Learn more</a>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

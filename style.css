@@ -3,35 +3,175 @@
 */
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
 :root {
-  --gray-0: #000000;
-  --gray-1: #222222;
-  --gray-2: #dddddd;
-  --gray-3: #fbfbfb;
-  --gray-4: #ffffff;
-  --primary: #8a2be2;
-  --secondary: #20d397;
-  --font-size-1: 1.5rem;
-  --font-size-2: 1.25rem;
-  --font-size-3: 1rem;
-  --font-weight-thin: 300;
-  --font-weight-bold: 600;
-  --font-weight-heavy: 800;
-  --spacer-1: .25rem;
-  --spacer-2: .5rem;
-  --spacer-3: 1rem;
-  --spacer-4: 1.5rem;
-  --spacer-5: 2rem;
-  --shadows: 7px 7px 7px rgba(0, 0, 0, .15);
+    --gray-0: #000000;
+    --gray-1: #222222;
+    --gray-2: #dddddd;
+    --gray-3: #fbfbfb;
+    --gray-4: #ffffff;
+    --primary: #8a2be2;
+    --secondary: #20d397;
+    --font-size-1: 1.5rem;
+    --font-size-2: 1.25rem;
+    --font-size-3: 1rem;
+    --font-weight-thin: 300;
+    --font-weight-bold: 600;
+    --font-weight-heavy: 800;
+    --spacer-1: .25rem;
+    --spacer-2: .5rem;
+    --spacer-3: 1rem;
+    --spacer-4: 1.5rem;
+    --spacer-5: 2rem;
+    --shadows: 7px 7px 7px rgba(0, 0, 0, .15);
+    --card-text-margin: 1.75rem;
 }
 
 html {
-  font-size: 16px;
-  line-height: 1.44;
+    font-size: 16px;
+    line-height: 1.44;
+}
+
+body {
+    background-color: var(--gray-3);
+    color: var(--gray-1);
+}
+
+nav {
+    background-color: var(--secondary);
+}
+
+nav>.content {
+    display: flex;
+    color: var(--gray-4);
+    font-weight: var(--font-weight-heavy);
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-3);
+}
+
+.brand {
+    display: flex;
+    justify-content: space-between;
+    column-gap: var(--spacer-3);
+    align-content: center;
+}
+
+.brand>img {
+    width: var(--spacer-5);
+}
+
+nav>.content>ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    column-gap: var(--spacer-5);
+    margin-top: var(--spacer-2);
+    margin-bottom: var(--spacer-2);
+}
+
+nav>.content>ul>li {
+    padding-top: var(--spacer-2);
+    padding-bottom: var(--spacer-2);
+}
+
+nav>.content>ul>li>a {
+    text-decoration: none;
+    color: var(--gray-4);
+}
+
+li.active {
+    border-bottom: 2px solid var(--gray-4);
+}
+
+h1 {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacer-5);
+    margin-bottom: var(--spacer-5);
+}
+
+.deck {
+    display: grid;
+    gap: var(--spacer-5);
+}
+
+@media (min-width: 768px) {
+    .deck {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .deck {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    padding: var(--spacer-4);
+    border-style: solid;
+    border-color: var(--gray-2);
+    border-radius: 1px;
+    border-width: 1px;
+    box-shadow: var(--shadows);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card>h2 {
+    margin-bottom: var(--card-text-margin);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+}
+
+.card>p {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-thin);
+    margin-bottom: var(--card-text-margin);
+}
+
+.card>a {
+    display: flex;
+    background-color: var(--primary);
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
+    color: var(--gray-3);
+    text-decoration: none;
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-thin);
+    display: flex;
+    align-items: flex-end;
+    gap: var(--spacer-3);
+    align-items: center;
+    height: 2.375rem;
+}
+
+.card>a>img {
+    height: var(--spacer-3);
+}
+
+
+/*in the examples 1440-900-1x and 1280-800-1x it seem that the content goes in a 990px window*/
+
+@media (min-width: 990px) {
+    .content {
+        width: 990px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 989px) {
+    .content {
+        margin-left: var(--spacer-3);
+        margin-right: var(--spacer-3);
+    }
 }
