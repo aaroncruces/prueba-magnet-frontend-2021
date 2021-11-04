@@ -1,0 +1,19 @@
+{
+  "name": "testing_magnet_frontend",
+  "version": "1.0.0",
+  "description": "This technical test requires you to implement a HTML and CSS page based on a reference design.",
+  "main": "site.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "web-dev-server --node-resolve --watch --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://interviews.magnet.cl/aaron_cruces/magnet-frontend-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.25"
+  }
+}
